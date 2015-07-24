@@ -78,8 +78,19 @@ RESPONSE
 </book>
 
 
-Similarly,
 
 GETTING ALL BOOKS
-
 curl -X GET -H "Accept: application/xml" http://localhost:8080/rest-1.0/rs/book
+
+DELETE A BOOK
+curl -X DELETE http://localhost:8080/rest-1.0/rs/book/1 -v
+
+RESPONSE
+
+> DELETE /rest-1.0/rs/book/1 HTTP/1.1
+> User-Agent: curl/7.23.1 (x86_64-apple-darwin11.2.0) libcurl/7.23.1
+> Host: localhost:8080
+> Accept: */*
+>
+< HTTP/1.1 204 No Content
+< Server: GlassFish Server Open Source Edition  4.0
