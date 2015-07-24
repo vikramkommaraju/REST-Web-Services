@@ -1,0 +1,21 @@
+To deploy the war, you need to make sure GlassFish server and Derby server BOTH are up and running.
+
+To start GlassFish server, look at Caveats.txt of EJB
+TO start derby, make sure derby is installed and then run startNetworkServer script
+This will start a network server listening on port 1527
+
+If you dont start derby, you will see error deploying the war to GlassFish
+
+[vkommara::REST-Web-Services]>asadmin deploy target/rest-1.0.war 
+remote failure: Error occurred during deployment: Exception while preparing the app : Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: java.net.ConnectException : Error connecting to server localhost on port 1527 with message Connection refused.
+Error Code: 0. Please see server.log for more details.
+Command deploy failed.
+
+After derby is up
+
+[vkommara::REST-Web-Services]>asadmin deploy target/rest-1.0.war 
+Application deployed with name rest-1.0.
+Command deploy executed successfully.
+[vkommara::REST-Web-Services]>
+
