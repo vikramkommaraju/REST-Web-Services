@@ -19,3 +19,14 @@ Application deployed with name rest-1.0.
 Command deploy executed successfully.
 [vkommara::REST-Web-Services]>
 
+After the war is deployed, you can either use a rest client like Jersey or you can use the cURL command line
+
+TO create a book (This takes in the post payload in JSON format)
+
+curl -X POST --data-binary "{\"description\":\"Science fiction comedy book\", \"illustrations\":false,\"isbn\":\"1-84023-742-2\",\"nbOfPage\":354,\"price\":12.5,\"title\":\"The Hitchhiker's Guide to the Galaxy\"}" -H "Content-Type: application/json " http://localhost:8080/rest-1.0/rs/book -v
+
+
+
+URL for the application is "http://localhost:8080/rest-1.0/rs/". This is specified in ApplicationConfig class
+@ApplicationPath("rs")
+public class ApplicationConfig extends Application {
