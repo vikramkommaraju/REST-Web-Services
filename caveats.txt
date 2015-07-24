@@ -76,3 +76,10 @@ RESPONSE
 <price>12.5</price>
 <title>The Hitchhiker's Guide to the Galaxy</title>
 </book>
+
+
+Similarly,
+
+GETTING ALL BOOKS
+
+curl -X GET -H "Accept: application/xml" http://localhost:8080/rest-1.0/rs/book
